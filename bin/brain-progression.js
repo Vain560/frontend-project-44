@@ -16,11 +16,13 @@ const progression = (num1, num2) => {
   return FiveNumbers;
 };
 
+const generateRandomNumber = (max) => Math.floor(Math.random() * max);
+
 const game = () => {
   for (let i = 0; i < 3; i += 1) {
-    const number1 = Math.floor(Math.random() * 101);
-    const number2 = Math.floor(Math.random() * 11);
-    const secretNumber = Math.floor(Math.random() * 5);
+    const number1 = generateRandomNumber(101);
+    const number2 = generateRandomNumber(11);
+    const secretNumber = generateRandomNumber(5);
     const FiveNumbers = progression(number1, number2);
 
     let Question = '';
