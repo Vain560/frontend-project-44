@@ -19,9 +19,11 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
+const generateRandomNumber = (max) => Math.floor(Math.random() * max);
+
 const game = () => {
   for (let i = 0; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * 101);
+    const number = generateRandomNumber(101);
     const rightAnswer = isPrimeNumber(number) ? 'yes' : 'no';
     console.log(`Question: ${number}`);
     const userAnswer = readlineSync.question('Your answer: ');
