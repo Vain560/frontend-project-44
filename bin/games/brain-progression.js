@@ -9,9 +9,10 @@ console.log('What number is missing in the progression?');
 
 const progression = (num1, num2) => {
   const FiveNumbers = [];
+  let currentNum = num1;
   for (let i = 0; i < 5; i += 1) {
-    FiveNumbers.push(num1);
-    num1 += num2;
+    FiveNumbers.push(currentNum);
+    currentNum += num2;
   }
   return FiveNumbers;
 };
@@ -38,7 +39,7 @@ const game = () => {
 
     console.log(`Question: ${Question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (parseInt(rightAnswer) === parseInt(userAnswer)) {
+    if (parseInt(rightAnswer, 10) === parseInt(userAnswer, 10)) {
       console.log('Correct!');
     } else {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);

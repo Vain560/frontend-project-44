@@ -12,7 +12,7 @@ console.log('');  //game question or rules
 const game = () => {
   for (let i = 0; i < 3; i += 1) {
     const randomNumber = Math.floor(Math.random() * 101); 
-    const rightAnswer = ;
+    const rightAnswer = something;
 
     console.log(`Question: `);
     const userAnswer = readlineSync.question('Your answer: ');
