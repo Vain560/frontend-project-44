@@ -5,16 +5,16 @@ import readlineSync from 'readline-sync';
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
-console.log('');  //game question or rules
+console.log(''); // game question or rules
 
-//common variables and functions
+// common variables and functions
 
 const game = () => {
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * 101); 
-    const rightAnswer = something;
+    const randomNumber = Math.floor(Math.random() * 101);
+    const rightAnswer = randomNumber;
 
-    console.log(`Question: `);
+    console.log('Question: ');
     const userAnswer = readlineSync.question('Your answer: ');
     if (rightAnswer === userAnswer) {
       console.log('Correct!');
@@ -26,4 +26,4 @@ const game = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-even();
+game();
