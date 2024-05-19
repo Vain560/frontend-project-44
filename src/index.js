@@ -1,29 +1,26 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
+import greetUser from './cli.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log(''); // game question or rules
+const runGame = (gameDescription, generateQuestionAnswer) => {
+  const userName = greetUser();
+  console.log(gameDescription);
 
-// common variables and functions
-
-const game = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * 101);
-    const rightAnswer = randomNumber;
-
-    console.log('Question: ');
+  const rounds = 3;
+  for (let i = 0; i < rounds; i += 1) {
+    const [question, correctAnswer] = generateQuestionAnswer();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (rightAnswer === userAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
+
+    if (userAnswer !== correctAnswer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
+
+    console.log('Correct!');
   }
-  console.log(`Congratulations, ${name}!`);
+
+  console.log(`Congratulations, ${userName}!`);
 };
 
-game();
+export default runGame;
