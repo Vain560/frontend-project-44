@@ -1,3 +1,47 @@
+# frontend-project-44
+
+## Brain Games
+
+A collection of educational mini-games built with Node.js.
+
+### Installation
+
+To install the package, run:
+
+```sh
+npm install -g frontend-project-44
+```
+
+### Usage
+
+Run each game using the following commands:
+
+```sh
+brain-even
+brain-calc
+brain-gcd
+brain-prime
+brain-progression
+```
+
+### Games Description
+
+1. **brain-even**: Determine if the number is even.
+2. **brain-calc**: Solve arithmetic expressions.
+3. **brain-gcd**: Find the greatest common divisor.
+4. **brain-prime**: Identify prime numbers.
+5. **brain-progression**: Find the missing number in a progression.
+
+### Development
+
+For local development:
+
+```sh
+git clone https://github.com/Vain560/frontend-project-44.git
+cd frontend-project-44
+npm install
+```
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Vain560/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Vain560/frontend-project-44/actions)
 

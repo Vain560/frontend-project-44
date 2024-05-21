@@ -2,28 +2,33 @@ import runGame from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const operators = ['+', '-', '*'];
+const generateQuestionAnswer = () => {
+  const num1 = Math.floor(Math.random() * 10);
+  const num2 = Math.floor(Math.random() * 10);
+  const operators = ['+', '-', '*'];
+  const operator = operators[Math.floor(Math.random() * operators.length)];
 
-const calculate = (num1, operator, num2) => {
+  let question;
+  let correctAnswer;
+
   switch (operator) {
     case '+':
-      return num1 + num2;
+      question = `${num1} + ${num2}`;
+      correctAnswer = (num1 + num2).toString();
+      break;
     case '-':
-      return num1 - num2;
+      question = `${num1} - ${num2}`;
+      correctAnswer = (num1 - num2).toString();
+      break;
     case '*':
-      return num1 * num2;
+      question = `${num1} * ${num2}`;
+      correctAnswer = (num1 * num2).toString();
+      break;
     default:
-      return null;
+      throw new Error(`Unknown operator: ${operator}`);
   }
-};
 
-const generateQuestionAnswer = () => {
-  const num1 = Math.floor(Math.random() * 101);
-  const num2 = Math.floor(Math.random() * 101);
-  const operator = operators[Math.floor(Math.random() * operators.length)];
-  const example = `${num1} ${operator} ${num2}`;
-  const correctAnswer = `${calculate(num1, operator, num2)}`;
-  return [example, correctAnswer];
+  return [question, correctAnswer];
 };
 
 export default () => runGame(gameDescription, generateQuestionAnswer);
